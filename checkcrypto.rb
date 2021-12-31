@@ -29,7 +29,7 @@ def format_currency(value)
     .prepend "$"
 end
 
-portfolio = ARGV[0] # "symbol:amount;symbol:amount;..."
+portfolio = (ARGV[0] || "BTC:1") # "symbol:amount;symbol:amount;..."
   .split(";") # Split into [ "symbol:amount", ... ]
   .map {_1.split(":")} # Split into [ ["symbol", "amount"], ... ]
   .to_h # Convert to { "symbol" => "amount" }
