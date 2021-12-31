@@ -41,7 +41,7 @@ response = RestClient.get endpoint,
   params: {"symbol" => portfolio.keys.join(","), "convert" => desired_currency}
 rescue Exception => e
   puts "Error From API"
-  puts e.http_body
+  puts e
   exit(1)
 end
 data = JSON.parse(response.body)["data"]
